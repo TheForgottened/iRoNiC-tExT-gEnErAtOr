@@ -1,0 +1,74 @@
+html {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+    font-family: Consolas, 'Courier New', monospace;
+}
+
+textarea {
+    background-color: #252526;
+    color: #CCCCCC;
+    height: 20%;
+    width: 75%;
+
+    resize: none;
+    border-radius: 5px;
+
+    outline: none;
+    padding: 10px;
+
+    font-size: 15px;
+}
+
+button,
+button:active,
+button:hover {
+    background-color: #252526;
+    color: #CCCCCC;
+
+    border: 1px solid #D4D4D4;
+    border-radius: 5px; 
+    text-align: center;
+    box-shadow: none;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.link {
+    color: #569cd6;
+}
+
+/* scrollbar for textarea*/
+
+/* width */
+textarea::-webkit-scrollbar {
+    width: 8px;
+    padding: 2px;
+}
+  
+/* Track */
+textarea::-webkit-scrollbar-track {
+    background: #3A3D41;
+}
+
+/* Handle */
+textarea::-webkit-scrollbar-thumb {
+    background: #252526;
+    border-radius: 5px;
+    border: 1px solid #3A3D41;
+}
+  
+/* Handle on hover */
+textarea::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
