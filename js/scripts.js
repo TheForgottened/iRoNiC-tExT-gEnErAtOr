@@ -7,6 +7,7 @@ var outDefault = "Converted text here";
 
 var inputID = document.getElementById("input_text");
 var outputID = document.getElementById("output_text");
+var capID = document.getElementById("capitalization");
 var resetID = document.getElementById("reset_button");
 
 function clearText(element) {
@@ -21,17 +22,34 @@ function transformText() {
     let arrLower = Array.from(strOrig.toLowerCase());
     let arrUpper = Array.from(strOrig.toUpperCase());
 
-    for (i = 0, j = 0; i < arr.length; i++) {
-        if (arr[i] != " " && arr[i] != "\n") {
-            if (j % 2 == 0) {
-                arr[i] = arrLower[i];
-            } else {
-                if (arr[i] != " " && arr[i] != "\n") {
-                    arr[i] = arrUpper[i];
-                }
-            }
 
-            j++;
+    if (capID.checked) {
+        for (i = 0, j = 0; i < arr.length; i++) {
+            if (arr[i] != " " && arr[i] != "\n") {
+                if (j % 2 == 0) {
+                    arr[i] = arrUpper[i];
+                } else {
+                    if (arr[i] != " " && arr[i] != "\n") {
+                        arr[i] = arrLower[i];
+                    }
+                }
+
+                j++;
+            }
+        }
+    } else {
+        for (i = 0, j = 0; i < arr.length; i++) {
+            if (arr[i] != " " && arr[i] != "\n") {
+                if (j % 2 == 0) {
+                    arr[i] = arrLower[i];
+                } else {
+                    if (arr[i] != " " && arr[i] != "\n") {
+                        arr[i] = arrUpper[i];
+                    }
+                }
+
+                j++;
+            }
         }
     }
 
@@ -66,6 +84,9 @@ function initListeners() {
     // converts text in textarea live
     inputID.addEventListener("keyup", transformText);
 
-    //
+    // resets text area to default value
     resetID.addEventListener("click", resetTextAreas);
+
+    // check if the ironic value method has been changed
+    capID.addEventListener("click", transformText);
 }
