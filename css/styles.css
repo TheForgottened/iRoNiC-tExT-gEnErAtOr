@@ -1,12 +1,39 @@
+/* Global Variables - colors according to Dracula */
+/* https://draculatheme.com/contribute */
+:root {
+    --background: #282a36;
+    --backgroundLight: #343746;
+    --backgroundLighter: #424450;
+    --backgroundDark: #191A21;
+    --currentLine: #44475a;
+    --foreground: #f8f8f2;
+    --comment: #6272a4;
+
+    /* Colors */
+    --cyan: #8be9fd;
+    --green: #50fa7b;
+    --orange: #ffb86c;
+    --pink: #ff79c6;
+    --purple: #bd93f9;
+    --red: #ff5555;
+    --yellow: #f1fa8c;
+}
+
+/* Styles */
+
 html {
-    background-color: #1E1E1E;
-    color: #D4D4D4;
-    font-family: Consolas, 'Courier New', monospace;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: Monaco, monospace;
+}
+
+h1 {
+    color: var(--purple);
 }
 
 textarea {
-    background-color: #252526;
-    color: #CCCCCC;
+    background-color: var(--backgroundLight);
+    color: var(--foreground);
     height: 20%;
     width: 75%;
 
@@ -22,10 +49,10 @@ textarea {
 button,
 button:active,
 button:hover {
-    background-color: #252526;
-    color: #CCCCCC;
+    background-color: var(--backgroundDark);
+    color: var(--foreground);
 
-    border: 1px solid #D4D4D4;
+    border: 1px solid var(--foreground);
     border-radius: 5px; 
     text-align: center;
     box-shadow: none;
@@ -54,7 +81,7 @@ button:hover {
 }
 
 .link {
-    color: #569cd6;
+    color: var(--cyan);
 }
 
 /* scrollbar for textarea*/
@@ -67,17 +94,24 @@ textarea::-webkit-scrollbar {
   
 /* Track */
 textarea::-webkit-scrollbar-track {
-    background: #3A3D41;
+    background: var(--background);
 }
 
 /* Handle */
 textarea::-webkit-scrollbar-thumb {
-    background: #252526;
+    background: var(--backgroundLight);
     border-radius: 5px;
     border: 1px solid #3A3D41;
 }
   
 /* Handle on hover */
 textarea::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--backgroundLighter);
+    cursor: pointer !important;
+}
+
+/* Custom Font */
+@font-face {
+    font-family: Monaco, monospace;
+    src: url(fonts/monaco.ttf);
 }
